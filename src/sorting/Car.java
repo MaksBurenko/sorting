@@ -20,19 +20,14 @@ public class Car implements Comparable {
         int c = this.color.compareTo(((Car)o).color);
 
         if (m == 0 ) {
-            return this.speed - ((Car)o).speed;
+            if (s == 0) {
+                if (p == 0) {
+                    return this.color.compareTo(((Car)o).color);
+                } else
+                    return p;
+            } else
+                return s;
         } else
             return m;
-
-        if (s == 0) {
-            return this.price - ((Car)o).price;
-        } else
-            return s;
-
-        if (p == 0) {
-            return this.color.compareTo(((Car)o).color);
-        } else
-            return p;
-
     }
 }
