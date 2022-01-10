@@ -14,43 +14,45 @@ public class Dispatcher {
                 System.out.println(temp);
             }
         } else {
-            if(int enterValue = Integer.parseInt(args[0]);) {
 
-            } else {
-
-            }
-
-
-            if (enterValue == 1) {
-                Arrays.sort(c);
-                for (Car temp : c) {
-                    System.out.println(temp);
-                }
-            } else {
-                if (enterValue == 2) {
-                    Arrays.sort(c, new ComparatorByColor());
+            try{
+                int enterValue = Integer.parseInt(args[0]);
+                if (enterValue == 1) {
+                    Arrays.sort(c);
                     for (Car temp : c) {
                         System.out.println(temp);
                     }
                 } else {
-                    if (enterValue == 3) {
-                        Arrays.sort(c, new ComparatorByPrice());
+                    if (enterValue == 2) {
+                        Arrays.sort(c, new ComparatorByColor());
                         for (Car temp : c) {
                             System.out.println(temp);
                         }
                     } else {
-                        if (enterValue == 4) {
-                            Arrays.sort(c, new ComparatorBySpeed());
+                        if (enterValue == 3) {
+                            Arrays.sort(c, new ComparatorByPrice());
                             for (Car temp : c) {
                                 System.out.println(temp);
                             }
                         } else {
-                            Arrays.sort(c);
-                            for (Car temp : c) {
-                                System.out.println(temp);
+                            if (enterValue == 4) {
+                                Arrays.sort(c, new ComparatorBySpeed());
+                                for (Car temp : c) {
+                                    System.out.println(temp);
+                                }
+                            } else {
+                                Arrays.sort(c);
+                                for (Car temp : c) {
+                                    System.out.println(temp);
+                                }
                             }
                         }
                     }
+                }
+            } catch (Exception e) {
+                Arrays.sort(c);
+                for (Car temp : c) {
+                    System.out.println(temp);
                 }
             }
         }
